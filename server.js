@@ -38,9 +38,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Route usage
 app.use("/", viewRoutes);
-app.use('/api/login', loginRoutes);
-app.use('/api/signup', signupRoutes);
-app.use("/api/users", userRoutes);
+app.use("/", userRoutes);
+app.use('/', loginRoutes);
+app.use('/', signupRoutes);
 
 // Server start and database sync
 sequelize.sync({ force: false }).then(() => {
