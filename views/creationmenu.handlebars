@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=MedievalSharp&family=Noto+Sans+Khojki&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Truculenta:opsz,wght@12..72,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>D&D Character Creator</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header-container">
+      <div class="hero-logo">
+        <a>
+          <img class="logo-style" src="/img/dnd-logo.svg"></img>
+        </a>
+      </div>
+    <div class="nav">
+        <a class="header-options" href="#home">Home</a>
+        <a class="header-options" href="#About">About</a>
+        <a class="header-options" href="/login">Login</a>
+    </div>
+  </header>
+  <!-- FORM -->
+  <section>
+    <img class="intro-background" src="/img/DND-Dragon-Background.avif">
+    <form>
+      <div class="form-wrapper">
+    <div class="question-section">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="    Character Name" />
+    </div>
+
+    <div class="question-section">
+      <label for="class">Class:</label>
+      <select id="class" name="class">
+        <option value="fighter">Fighter</option>
+        <option value="wizard">Wizard</option>
+        <option value="rogue">Rogue</option>
+        <option value="cleric">Cleric</option>
+      </select>
+      </div>
+
+      <div class="question-section">
+      <label for="race">Race:</label>
+      <select id="race" name="race">
+        <option value="human">Human</option>
+        <option value="elf">Elf</option>
+        <option value="dwarf">Dwarf</option>
+        <option value="halfling">Halfling</option>
+      </select>
+      </div>
+
+    <div class="question-section">
+      <label for="alignment">Alignment:</label>
+      <select id="alignment" name="alignment">
+        <option value="lawful_good">Lawful Good</option>
+        <option value="chaotic_neutral">Chaotic Neutral</option>
+        <option value="lawful_evil">Lawful Evil</option>
+      </select>
+    </div>
+
+    <div class="question-section">
+      <label for="strength">Strength:</label>
+      <input type="number" id="strength" name="strength" />
+    </div>
+
+    <div class="question-section">
+      <label for="dexterity">Dexterity:</label>
+      <input type="number" id="dexterity" name="dexterity" />
+    </div>
+
+    <div class="question-section">
+      <label for="constitution">Constitution:</label>
+      <input type="number" id="constitution" name="constitution" />
+    </div>
+
+    <div class="question-section">
+      <label for="intelligence">Intelligence:</label>
+      <input type="number" id="intelligence" name="intelligence" />
+    </div>
+
+    <div class="question-section">
+      <label for="wisdom">Wisdom:</label>
+      <input type="number" id="wisdom" name="wisdom" />
+    </div>
+
+    <div class="question-section">
+      <label for="charisma">Charisma:</label>
+      <input type="number" id="charisma" name="charisma" />
+    </div>
+
+      <button type="submit" class="button">Save Character</button>
+    </div>
+    </form>
+  </section>
+  </body>
+</html>

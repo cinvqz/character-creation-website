@@ -11,6 +11,7 @@ const viewRoutes = require("./routes/viewRoutes");
 const userRoutes = require("./routes/api/userRoutes");
 const loginRoutes = require("./routes/api/loginRoutes");
 const signupRoutes = require("./routes/api/signupRoutes");
+const ccRoutes = require("./routes/api/ccRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,7 +22,6 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 
-
 const sess = {
   secret: "Super secret secret",
   cookie: {},
@@ -31,7 +31,6 @@ const sess = {
 };
 app.use(session(sess));
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -39,8 +38,9 @@ app.use(express.static(path.join(__dirname, "public")));
 // Route usage
 app.use("/", viewRoutes);
 app.use("/", userRoutes);
-app.use('/', loginRoutes);
-app.use('/', signupRoutes);
+app.use("/", loginRoutes);
+app.use("/", signupRoutes);
+app.use("/", ccRoutes);
 
 // Server start and database sync
 sequelize.sync({ force: false }).then(() => {
