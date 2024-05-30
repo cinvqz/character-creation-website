@@ -1,0 +1,90 @@
+/* General CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #e5e5e0;
+}
+
+body {
+  font-family: MedievalSharp, Arial, Helvetica;
+}
+
+h1 {
+  color: #faf9f6;
+}
+
+/* Style CSS */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 0rem 0.5rem 0rem;
+  border-bottom: 0.3rem solid #9e0404;
+}
+
+.nav {
+  padding: 0rem 3rem 0rem 3rem;
+}
+
+.header-options {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+.logo-style {
+  width: 150px;
+  height: 55px;
+}
+
+/* FORM */
+
+section {
+  background-color: #00000049;
+  height: 91.5vh;
+}
+
+.intro-background {
+  display: flex;
+  width: 100vw;
+  height: 91.5vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.question-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 0.8rem;
+}
+
+label {
+  color: rgb(247, 247, 247);
+  font-size: 1.2rem;
+}
+
+.button {
+  background-color: #9e0404;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
