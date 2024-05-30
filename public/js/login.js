@@ -1,27 +1,27 @@
-const loginFormHandler = async (event) => {
-  // Prevents the default form submission behavior which reloads the page.
+const loginFormHandler = async function (event) {
   event.preventDefault();
 
-  // Retrieves the values entered in the email and password fields and trims any whitespace.
+  console.log("after event listener");
+
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
-    // awaits the users log in inputs to send to the server.js as a JSON to authenticate
-    const response = await fetch("/api/users/login", {
+    console.log("before response");
+
+    const response = await fetch("/user/login", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/home");
     } else {
-      alert("Failed to log in");
+      alert("Failed to log in. Please check your credentials.");
+      console.error("Failed login attempt:", await response.json());
     }
   }
 };
 
-document
-  .querySelector(".login-form")
-  .addEventListener("submit", loginFormHandler);
+document.querySelector("#loginbtn").addEventListener("click", loginFormHandler);
