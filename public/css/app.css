@@ -212,14 +212,14 @@ a:hover {
 }
 
 .page_login .form {
-  background: black;
+  background: rgba(0, 0, 0, 0.698);
 }
 
 .form {
   width: 100%;
   max-width: 432px;
   margin: auto;
-  background: #005450;
+  background: #140145af;
   -webkit-box-shadow:
     0 16px 22px -10px rgba(0, 0, 0, 0.1),
     0 34px 55px 4px rgba(0, 0, 0, 0.05),

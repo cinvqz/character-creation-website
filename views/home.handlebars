@@ -1,0 +1,82 @@
+<!-- HEADER -->
+
+<!-- FORM -->
+<section>
+  <img class="intro-background" src="/img/DND-Dragon-Background.avif" />
+  <form>
+    <div class="form-wrapper">
+      <div class="question-section">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="    Character Name"
+        />
+      </div>
+
+      <div class="result-wrapper">
+        <div class="question-section">
+          <label for="class">Class:</label>
+          <select id="class" name="class">
+            <option value="fighter">Fighter</option>
+            <option value="wizard">Wizard</option>
+            <option value="rogue">Rogue</option>
+            <option value="cleric">Cleric</option>
+          </select>
+        </div>
+
+        <div class="question-section">
+          <label for="race">Race:</label>
+          <select id="race" name="race">
+            <option value="human">Human</option>
+            <option value="elf">Elf</option>
+            <option value="dwarf">Dwarf</option>
+            <option value="halfling">Halfling</option>
+          </select>
+        </div>
+
+        <div class="question-section">
+          <label for="alignment">Alignment:</label>
+          <select id="alignment" name="alignment">
+            <option value="lawful_good">Lawful Good</option>
+            <option value="chaotic_neutral">Chaotic Neutral</option>
+            <option value="lawful_evil">Lawful Evil</option>
+          </select>
+        </div>
+
+        <div class="question-section">
+          <label for="strength">Strength:</label>
+          <input type="number" id="strength" name="strength" />
+        </div>
+
+        <div class="question-section">
+          <label for="dexterity">Dexterity:</label>
+          <input type="number" id="dexterity" name="dexterity" />
+        </div>
+
+        <div class="question-section">
+          <label for="constitution">Constitution:</label>
+          <input type="number" id="constitution" name="constitution" />
+        </div>
+
+        <div class="question-section">
+          <label for="intelligence">Intelligence:</label>
+          <input type="number" id="intelligence" name="intelligence" />
+        </div>
+
+        <div class="question-section">
+          <label for="wisdom">Wisdom:</label>
+          <input type="number" id="wisdom" name="wisdom" />
+        </div>
+
+        <div class="question-section">
+          <label for="charisma">Charisma:</label>
+          <input type="number" id="charisma" name="charisma" />
+        </div>
+      </div>
+      <button id="characterbtn" class="button">Save Character</button>
+    </div>
+  </form>
+</section>
+<script src="/js/character-creation.js"></script>

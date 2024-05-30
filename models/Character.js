@@ -1,8 +1,8 @@
 const { Model, DataType } = require("sequelize");
 
-class Post extends Model {}
+class Character extends Model {}
 
-Post.init(
+Character.init(
   {
     title: {
       type: DataType.STRING,
