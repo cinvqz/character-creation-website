@@ -4,23 +4,12 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const helpers = require("./utils/helper");
 const sequelize = require("./config/connection");
+const routes = require("./routes/index");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-
-// Route imports
-const viewRoutes = require("./routes/viewRoutes");
-const userRoutes = require("./routes/api/userRoutes");
-const loginRoutes = require("./routes/api/loginRoutes");
-const signupRoutes = require("./routes/api/signupRoutes");
-const ccRoutes = require("./routes/api/ccRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
-// Handlebars setup
 const hbs = exphbs.create({ helpers });
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
-app.set("views", "./views");
 
 const sess = {
   secret: "Super secret secret",
@@ -31,16 +20,15 @@ const sess = {
 };
 app.use(session(sess));
 
+// Handlebars setup
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+// app.set("views", "./views");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-
-// Route usage
-app.use("/", viewRoutes);
-app.use("/", userRoutes);
-app.use("/", loginRoutes);
-app.use("/", signupRoutes);
-app.use("/", ccRoutes);
+app.use(routes);
 
 // Server start and database sync
 sequelize.sync({ force: false }).then(() => {
