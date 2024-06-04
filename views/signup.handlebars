@@ -1,0 +1,59 @@
+<div class="page">
+  <form class="form" action="/signup" method="POST">
+    <div class="form__container">
+      <div class="logo"><img
+          class="logo__pic"
+          src="img/logo.svg"
+          width="45"
+        /></div>
+      <div class="fieldset">
+        <div class="field">
+          <input
+            class="input"
+            type="text"
+            name="name"
+            placeholder="Your name"
+            value="{{name}}"
+            required
+          />
+        </div>
+        <div class="field">
+          <input
+            class="input"
+            type="email"
+            name="email"
+            placeholder="E-mail address"
+            value="{{email}}"
+            required
+          />
+        </div>
+        <div class="field">
+          <input
+            class="input"
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+      </div>
+      <button class="btn">Sign up</button>
+      {{#if errorMessage}}
+        <div class="error">{{errorMessage}}</div>
+      {{/if}}
+      <div class="text">
+        By creating an account, you agree and accept our
+        <a href="#">Terms</a>
+        and
+        <a href="#">Privacy Policy</a>.
+      </div>
+    </div>
+    <div class="form__footer">
+      Already have an account?
+      <a href="/login">Log in</a>.
+    </div>
+  </form>
+
+  <div class="about">Website template by ⚡
+    <a href="https://niceverynice.com">Nice, Very Nice</a></div>
+</div>

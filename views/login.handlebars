@@ -1,5 +1,5 @@
 <div class="page page_login">
-  <form class="form" action>
+  <form class="form login-form">
     <div class="form__container">
       <div class="logo"><img
           class="logo__pic"
@@ -9,23 +9,24 @@
       <div class="fieldset">
         <div class="field"><input
             class="input"
+            id="email-login"
             type="email"
             placeholder="E-mail address"
             required
           /></div>
         <div class="field"><input
             class="input"
+            id="password-login"
             type="password"
             placeholder="Password"
             required
           /></div>
-      </div><button class="btn login-form">Sign in</button>
-      <div class="text">Can't remember your password?
-        <a href="#">Recover it</a>.</div>
-    </div>
+        {{! button element changed to anchor }}
+      </div><button id="loginbtn" class="btn">Sign in</button>
     <div class="form__footer">Don't Have an Account?
-      <a href="index.html">Create it</a>.</div>
+      <a href="/signup">Create it</a>.</div>
   </form>
   <div class="about">Website template by ⚡
     <a href="https://niceverynice.com">Nice, Very Nice</a></div>
 </div>
+<script src="/js/login.js"></script>

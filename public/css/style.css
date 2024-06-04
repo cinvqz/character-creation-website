@@ -1,0 +1,208 @@
+/* General CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #e5e5e0;
+}
+
+body {
+  font-family: MedievalSharp, Arial, Helvetica;
+}
+
+h1 {
+  color: #faf9f6;
+}
+
+/* Style CSS */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 0rem 0.5rem 0rem;
+  border-bottom: 0.3rem solid #9e0404;
+}
+
+.nav {
+  padding: 0rem 3rem 0rem 3rem;
+}
+
+.header-options {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+.logo-style {
+  width: 150px;
+  height: 55px;
+}
+
+/* FORM */
+
+section {
+  background-color: #00000049;
+  height: 91.5vh;
+}
+
+.intro-background {
+  display: flex;
+  width: 100vw;
+  height: 91.5vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.question-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 0.8rem;
+}
+
+label {
+  color: rgb(247, 247, 247);
+  font-size: 1.2rem;
+}
+
+.button {
+  background-color: #9e0404;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Add at the end of style.css */
+
+/* Responsive CSS */
+@media only screen and (max-width: 1200px) {
+  /* Styles for tablets and larger phones */
+  .form__container,
+  .form__footer,
+  .header-container,
+  .question-section,
+  .grid-container {
+    padding: 10px;
+  }
+
+  .input {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for tablets and large phones */
+  .form__container,
+  .form__footer,
+  .header-container,
+  .question-section,
+  .grid-container {
+    padding: 8px;
+  }
+
+  .input {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .header-options {
+    font-size: 1.2rem;
+  }
+
+  .logo-style {
+    width: 100px;
+    height: 40px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .character-attribute {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Styles for mobile phones */
+  .form__container,
+  .form__footer,
+  .header-container,
+  .question-section,
+  .grid-container {
+    padding: 5px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .header-options {
+    font-size: 1rem;
+  }
+
+  .logo-style {
+    width: 80px;
+    height: 30px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .character-attribute {
+    padding: 0.5rem 0.5rem;
+  }
+}
