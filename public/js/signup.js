@@ -8,7 +8,7 @@ const signupFormHandler = async function(event) {
 
     // Send data to the server using fetch
     try{
-        const response = await fetch("/signup/check", {
+        const response = await fetch("/signupRoute/check", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({name, email, password})
@@ -18,10 +18,10 @@ const signupFormHandler = async function(event) {
             document.location.replace('/home');
         } else {
             // Handle errors
+            alert('Failed to signup. Please check your credentials')
             console.error('Error:', response.statusText);
         }
-    }
-    catch(error){
+    } catch(error){
         console.error(error);
     };
 };

@@ -4,23 +4,20 @@ const { User } = require("../../models");
 router.post('/check', async (req, res) => {
   try {
     // Finds the user by email
+    const userName = await User.findOne({where: { name: req.body.name}});
+    if (userName) {
+        res
+        .status(400)
+        .json({ message: "Name or Email taken, try again" });
+        return; 
+        }
     const userData = await User.findOne({ where: { email: req.body.email } });
     if (userData) {
-      res
+        res
         .status(400)
-        .json({ message: "Email or password taken, try again" });
-      return;
-    }
-
-    // Checks if the password is correct
-    const validPassword = await userData.checkPassword(req.body.password);
-    if (validPassword) {
-      res
-        .status(400)
-        .json({ message: "Email or password taken, try again" });
-      return;
-    }
-
+        .json({ message: "Name or Email taken, try again" }); 
+        return;
+      }
     // Set up session data here
     req.session.save(() => {
       req.session.user_id = userData.id;
