@@ -9,7 +9,7 @@ const loginFormHandler = async function (event) {
   if (email && password) {
     console.log("before response");
 
-    const response = await fetch("/user/login", {
+    const response = await fetch("/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

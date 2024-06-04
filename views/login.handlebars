@@ -1,5 +1,5 @@
 <div class="page page_login">
-  <form class="form login-form">
+  <form class="form login-form" action="/login" method="POST">
     <div class="form__container">
       <div class="logo"><img
           class="logo__pic"
@@ -11,6 +11,7 @@
             class="input"
             id="email-login"
             type="email"
+            name="email"
             placeholder="E-mail address"
             required
           /></div>
@@ -18,11 +19,12 @@
             class="input"
             id="password-login"
             type="password"
+            name="password"
             placeholder="Password"
             required
           /></div>
         {{! button element changed to anchor }}
-      </div><button id="loginbtn" class="btn">Sign in</button>
+      </div><button id="loginbtn" class="btn" type="submit">Sign in</button>
     <div class="form__footer">Don't Have an Account?
       <a href="/signup">Create it</a>.</div>
   </form>

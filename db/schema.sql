@@ -1,2 +1,11 @@
 DROP DATABASE IF EXISTS user_db;
 CREATE DATABASE user_db;
+
+
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    user_name VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL
+);

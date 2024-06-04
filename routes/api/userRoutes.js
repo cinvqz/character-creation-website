@@ -1,39 +1,53 @@
-const router = require("express").Router();
-const { User } = require("../../models");
+const router = require('express').Router();
+const { User } = require('../../models');
+const bcrypt = require('bcrypt');
 
-router.post("/login", async (req, res) => {
+// Signup route
+router.post('/signup', async (req, res) => {
+  const { user_name, email, password } = req.body;
   try {
-    // Finds the user by email
+    const existingUser = await User.findOne({ where: { email } });
+    if (existingUser) {
+      return res.render('signup', { errorMessage: 'User with this email already exists' });
+    }
+    const hashedPassword = await bcrypt.hash(password, 10);
+    await User.create({ user_name, email, password_hash: hashedPassword });
+    res.redirect('/login');
+  } catch (error) {
+    console.error(error);
+    res.render('signup', { errorMessage: 'An error occurred during signup' });
+  }
+});
+
+// Login route
+router.post('/login', async (req, res) => {
+  console.log('Login request received:', req.body);
+  try {
     const userData = await User.findOne({ where: { email: req.body.email } });
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
-      return;
+      console.log('No user found with this email:', req.body.email);
+      return res.render('login', { errorMessage: 'Failed to log in. Please check your credentials.' });
     }
+    
+    // Print hashed password from the database
+    console.log('Hashed password from the database:', userData.password_hash);
 
-    // Checks if the password is correct
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await bcrypt.compare(req.body.password, userData.password_hash);
+    console.log('Password comparison results:', validPassword);
+    
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
-      return;
+      console.log('Invalid password for user:', req.body.email);
+      return res.render('login', { errorMessage: 'Failed to log in. Please check your credentials.' });
     }
 
-    // Set up session data here
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
-      // Redirect or send a successful response
-      // res.json({ user: userData, message: "You are now logged in!" });
-      console.log("sent");
-      res.render("home");
+      res.redirect('/'); // Redirect to home page or dashboard
     });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Internal server error" });
+  } catch (error) {
+    console.error('Error during login:', error);
+    res.render('login', { errorMessage: 'An error occurred during login' });
   }
 });
 

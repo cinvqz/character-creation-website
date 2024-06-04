@@ -1,4 +1,4 @@
-const { Model, DataType } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 
 class Character extends Model {}
 
@@ -15,7 +15,7 @@ Character.init(
     user_id: {
       references: {
         key: "id",
-        mode: "user",
+        model: "User",
       },
     },
   },
@@ -25,3 +25,5 @@ Character.init(
     modelName: "post",
   }
 );
+
+module.exports = Character;
