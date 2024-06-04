@@ -37,12 +37,21 @@
         </a>
       </div>
     <div class="nav">
+        {{#if logged_in}}
         <a class="header-options" href="/home">Home</a>
+        {{/if}}
+
+        {{#if logged_in}}
+        <a class="header-options" id="logout" href="/login">Logout</a>
+        {{/if}}
+        {{#else}}
         <a class="header-options" href="/login">Login</a>
+        {{/else}}
     </div>
 </header>
 
   <body>
     {{{body}}}
   </body>
+<script src="/js/helper.js"></script>
 </html>
