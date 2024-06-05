@@ -1,5 +1,5 @@
 <div class="page">
-  <form class="form" action="/signup" method="POST">
+  <form class="form">
     <div class="form__container">
       <div class="logo"><img
           class="logo__pic"
@@ -11,9 +11,11 @@
           <input
             class="input"
             type="text"
+
             name="user_name"
             placeholder="Your name"
             value="{{name}}"
+
             required
           />
         </div>
@@ -21,9 +23,8 @@
           <input
             class="input"
             type="email"
-            name="email"
-            placeholder="E-mail address"
-            value="{{email}}"
+            id="email-signup"
+            placeholder="Enter E-mail address"
             required
           />
         </div>
@@ -31,10 +32,11 @@
           <input
             class="input"
             type="password"
-            name="password"
-            placeholder="Password"
+            id="password-signup"
+            placeholder="Create password"
             required
           />
+
         </div>
       </div>
       <button class="btn" type="submit">Sign up</button>
@@ -53,7 +55,7 @@
       <a href="/login">Log in</a>.
     </div>
   </form>
-
   <div class="about">Website template by ⚡
     <a href="https://niceverynice.com">Nice, Very Nice</a></div>
 </div>
+<script src="/js/signup.js"></script>

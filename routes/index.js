@@ -3,6 +3,7 @@ const router = express.Router();
 const userRoutes = require('./api/userRoutes');
 const withAuth = require("../utils/auth");
 
+
 router.use(userRoutes);
 
 router.get("/login", async (req, res) => {
@@ -13,6 +14,17 @@ router.get("/login", async (req, res) => {
       title: "Login Page",
     });
 });
+
+// Route imports
+const viewRoutes = require("./viewRoutes");
+const userRoutes = require("./api/userRoutes");
+const signupRoutes = require('./api/signupRoutes');
+
+// Route usage
+router.use("/", viewRoutes);
+router.use("/user", userRoutes);
+router.use('/signupRoute', signupRoutes);
+
 
 router.get("/signup", async (req, res) => {
     if (req.session.logged_in) {

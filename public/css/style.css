@@ -88,3 +88,121 @@ label {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+/* Add at the end of style.css */
+
+/* Responsive CSS */
+@media only screen and (max-width: 1200px) {
+  /* Styles for tablets and larger phones */
+  .form__container,
+  .form__footer,
+  .header-container,
+  .question-section,
+  .grid-container {
+    padding: 10px;
+  }
+
+  .input {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for tablets and large phones */
+  .form__container,
+  .form__footer,
+  .header-container,
+  .question-section,
+  .grid-container {
+    padding: 8px;
+  }
+
+  .input {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .header-options {
+    font-size: 1.2rem;
+  }
+
+  .logo-style {
+    width: 100px;
+    height: 40px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .character-attribute {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Styles for mobile phones */
+  .form__container,
+  .form__footer,
+  .header-container,
+  .question-section,
+  .grid-container {
+    padding: 5px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .header-options {
+    font-size: 1rem;
+  }
+
+  .logo-style {
+    width: 80px;
+    height: 30px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .character-attribute {
+    padding: 0.5rem 0.5rem;
+  }
+}
